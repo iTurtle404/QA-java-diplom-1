@@ -10,7 +10,6 @@ import static praktikum.Message.*;
 
 @RunWith(Parameterized.class)
 public class BunParamTest {
-
     private final String name;
     private final float price;
     public BunParamTest(String name, float price) {
@@ -33,5 +32,4 @@ public class BunParamTest {
         assertEquals(WRONG_NAME_MSG, name,bun.getName());
         assertEquals(WRONG_PRICE_MSG, price,bun.getPrice(),DELTA);
     }
-
 }

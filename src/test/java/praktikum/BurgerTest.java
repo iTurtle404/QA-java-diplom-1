@@ -31,10 +31,9 @@ Burger burger;
     @Test
     public void checkSetBun() {
         burger.setBuns(bun);
-        bun.getName();
         Mockito.when(bun.getName()).thenReturn(BLACK_BUN);
-        Mockito.verify(bun, Mockito.times(1)).getName();
         Assert.assertEquals(WRONG_NAME_MSG,BLACK_BUN, bun.getName());
+        Mockito.verify(bun, Mockito.times(1)).getName();
     }
     @Test
     public void addOneIngredientTest() {
@@ -75,8 +74,7 @@ Burger burger;
     public void checkGetPriceTest(){
         burger.setBuns(bun);
         Mockito.when(bun.getPrice()).thenReturn(BLACK_PRICE);
-        float actualBurger = bun.getPrice()*2;
-        assertEquals(WRONG_PRICE_MSG, burger.getPrice(), actualBurger, DELTA);
+        assertEquals(WRONG_PRICE_MSG, burger.getPrice(), bun.getPrice()*2, DELTA);
         Mockito.verify(bun, Mockito.times(2)).getPrice();
     }
 
@@ -97,10 +95,5 @@ Burger burger;
         assertEquals(ERROR_RECEIPT_MSG, expected, burger.getReceipt());
         Mockito.verify(bun, Mockito.times(2)).getName();
         Mockito.verify(bun, Mockito.times(1)).getPrice();
-        System.out.println(burger.getReceipt());
-        System.out.println(expected);
-
     }
-
-
 }

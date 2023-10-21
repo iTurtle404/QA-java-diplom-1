@@ -36,6 +36,6 @@ public class IngredientTest {
     }
     @Test
     public void getTypeNegativeTest(){
-        Assert.assertNotEquals(FAKE_EQUAL_TYPE_MSG,FAKE_TYPE, IngredientType.FILLING);
+        Assert.assertNotEquals(FAKE_EQUAL_TYPE_MSG,FAKE_TYPE, ingredient.getType());
     }
 }

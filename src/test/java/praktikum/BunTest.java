@@ -19,25 +19,21 @@ public class BunTest {
 
     @Test
     public void getNamePositiveTest(){
-        String actual = bun.getName();
-        assertEquals(WRONG_NAME_MSG, BLACK_BUN,actual);
+        assertEquals(WRONG_NAME_MSG, BLACK_BUN,bun.getName());
     }
 
     @Test
     public  void getPricePositiveTest(){
-        float actual  = bun.getPrice();
-        assertEquals(WRONG_PRICE_MSG, BLACK_PRICE, actual,DELTA);
+        assertEquals(WRONG_PRICE_MSG, BLACK_PRICE, bun.getPrice(),DELTA);
     }
 
     @Test
     public void getNameNegativeTest (){
-        String actual = bun.getName();
-        assertNotEquals(FAKE_EQUAL_NAME_MSG, FAKE_NAME,actual);
+        assertNotEquals(FAKE_EQUAL_NAME_MSG, FAKE_NAME,bun.getName());
     }
     @Test
     public void getPriceNegativeTest(){
-        float actual = bun.getPrice();
-        assertNotEquals(FAKE_EQUAL_PRICE_MSG, FAKE_PRICE,actual);
+        assertNotEquals(FAKE_EQUAL_PRICE_MSG, FAKE_PRICE,bun.getPrice());
     }
 
 }
