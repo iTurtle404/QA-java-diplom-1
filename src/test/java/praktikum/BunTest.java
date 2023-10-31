@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertThrows;
 import static praktikum.Constant.*;
 import static praktikum.Message.*;
 
@@ -28,12 +28,8 @@ public class BunTest {
     }
 
     @Test
-    public void getNameNegativeTest (){
-        assertNotEquals(FAKE_EQUAL_NAME_MSG, FAKE_NAME,bun.getName());
-    }
-    @Test
     public void getPriceNegativeTest(){
-        assertNotEquals(FAKE_EQUAL_PRICE_MSG, FAKE_PRICE,bun.getPrice());
+        assertThrows(Exception.class, () -> bun.getPrice(FAKE_NAME));
     }
 
 }

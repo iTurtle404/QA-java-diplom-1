@@ -38,7 +38,15 @@ public class IngredientTypeTest {
     public void checkIngredientTypeTest() {
         Ingredient ingredient = new Ingredient(type, name, price);
         assertEquals(ERROR_TYPE_FILLING_MSG , type, ingredient.getType());
+    }
+    @Test
+    public void checkIngredientNameTest() {
+        Ingredient ingredient = new Ingredient(type, name, price);
         assertEquals(WRONG_NAME_MSG , name, ingredient.getName());
+    }
+    @Test
+    public void checkIngredientPriceTest() {
+        Ingredient ingredient = new Ingredient(type, name, price);
         assertEquals(WRONG_PRICE_MSG , price, ingredient.getPrice(),DELTA);
     }
 
