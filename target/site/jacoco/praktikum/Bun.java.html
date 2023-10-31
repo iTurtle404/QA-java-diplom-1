@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Bun.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">praktikum</a> &gt; <a href="index.source.html" class="el_package">praktikum</a> &gt; <span class="el_source">Bun.java</span></div><h1>Bun.java</h1><pre class="source lang-java linenums">package praktikum;
 
+
+import static praktikum.Constant.*;
+
 /**
  * Модель булочки для бургера.
  * Булочке можно дать название и назначить цену.
@@ -8,19 +11,36 @@ public class Bun {
 
     public String name;
     public float price;
+    public boolean expected;
 
-<span class="fc" id="L12">    public Bun(String name, float price) {</span>
-<span class="fc" id="L13">        this.name = name;</span>
-<span class="fc" id="L14">        this.price = price;</span>
-<span class="fc" id="L15">    }</span>
+<span class="fc" id="L16">    public Bun(String name, float price) {</span>
+<span class="fc" id="L17">        this.name = name;</span>
+<span class="fc" id="L18">        this.price = price;</span>
+<span class="fc" id="L19">    }</span>
+<span class="fc" id="L20">    public Bun(String name, float price, boolean expected) {</span>
+<span class="fc" id="L21">        this.name = name;</span>
+<span class="fc" id="L22">        this.price = price;</span>
+<span class="fc" id="L23">        this.expected = expected;</span>
+<span class="fc" id="L24">    }</span>
 
     public String getName() {
-<span class="fc" id="L18">        return name;</span>
+<span class="fc" id="L27">        return name;</span>
     }
 
     public float getPrice() {
-<span class="fc" id="L22">        return price;</span>
+<span class="fc" id="L31">        return price;</span>
     }
 
+    public float getPrice(String name) throws Exception {
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        if (name == BLACK_BUN) {</span>
+<span class="fc" id="L36">            return BLACK_PRICE;</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        } else if (name == RED_BUN) {</span>
+<span class="nc" id="L38">            return RED_PRICE;</span>
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">        } else if (name == WHITE_BUN) {</span>
+<span class="nc" id="L40">            return WHITE_PRICE;</span>
+        } else {
+<span class="fc" id="L42">            throw new Exception(&quot;Неизвестная булка&quot;);</span>
+        }
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
