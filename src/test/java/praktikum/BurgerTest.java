@@ -31,8 +31,8 @@ Burger burger;
     @Test
     public void checkSetBun() {
         burger.setBuns(bun);
-        Mockito.when(bun.getName()).thenReturn(BLACK_BUN);
-        Assert.assertEquals(WRONG_NAME_MSG,BLACK_BUN, bun.getName());
+        Mockito.when(bun.getName()).thenReturn(BLACK_BUN_ENG);
+        Assert.assertEquals(WRONG_NAME_MSG, BLACK_BUN_ENG, bun.getName());
         Mockito.verify(bun, Mockito.times(1)).getName();
     }
     @Test
@@ -82,15 +82,15 @@ Burger burger;
     public void getReceiptTest() {
         burger.setBuns(bun);
         Mockito.when(bun.getPrice()).thenReturn(BLACK_PRICE);
-        Mockito.when(bun.getName()).thenReturn(BLACK_BUN);
+        Mockito.when(bun.getName()).thenReturn(BLACK_BUN_ENG);
         Mockito.when(firstIngredient.getType()).thenReturn(IngredientType.SAUCE);
         Mockito.when(firstIngredient.getName()).thenReturn(HOT_SAUCE);
         Mockito.when(firstIngredient.getPrice()).thenReturn(HOT_SAUCE_PRICE);
         burger.addIngredient(firstIngredient);
         String expected =
-                String.format("(==== %s ====)%n", BLACK_BUN) +
+                String.format("(==== %s ====)%n", BLACK_BUN_ENG) +
                         String.format("= %s %s =%n", firstIngredient.getType().toString().toLowerCase(), HOT_SAUCE) +
-                        String.format("(==== %s ====)%n", BLACK_BUN) +
+                        String.format("(==== %s ====)%n", BLACK_BUN_ENG) +
                         String.format("%nPrice: %f%n", (BLACK_PRICE * 2 + HOT_SAUCE_PRICE));
         assertEquals(ERROR_RECEIPT_MSG, expected, burger.getReceipt());
         Mockito.verify(bun, Mockito.times(2)).getName();

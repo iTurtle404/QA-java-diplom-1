@@ -14,9 +14,9 @@ public class Database {
     private final List<Ingredient> ingredients = new ArrayList<>();
 
     public Database() {
-        buns.add(new Bun( BLACK_BUN, BLACK_PRICE));
-        buns.add(new Bun(WHITE_BUN, WHITE_PRICE));
-        buns.add(new Bun(RED_BUN, RED_PRICE));
+        buns.add(new Bun(BLACK_BUN_ENG, BLACK_PRICE));
+        buns.add(new Bun(WHITE_BUN_ENG, WHITE_PRICE));
+        buns.add(new Bun(RED_BUN_ENG, RED_PRICE));
 
         ingredients.add(new Ingredient(IngredientType.SAUCE, HOT_SAUCE, HOT_SAUCE_PRICE));
         ingredients.add(new Ingredient(IngredientType.SAUCE, SOUR_CREAM, SOUR_CREAM_PRICE));
